@@ -5,7 +5,7 @@ public class User {;
     private String email;
     private String password;
     private boolean gender;
-    private int GameNumbers = 1;
+    private int GameNumbers = 0;
     private User(String username, String email, String password, boolean gender) {
         this.username = username;
         this.email = email;
