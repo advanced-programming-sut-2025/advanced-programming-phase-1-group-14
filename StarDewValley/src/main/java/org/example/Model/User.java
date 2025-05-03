@@ -1,6 +1,6 @@
 package org.example.Model;
 
-public enum User {;
+public class User {;
     private String username;
     private String email;
     private String password;
