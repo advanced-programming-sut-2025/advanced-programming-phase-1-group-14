@@ -6,11 +6,11 @@ public class User {;
     private String password;
     private boolean gender;
     private int GameNumbers = 1;
+    int salam;
     private User(String username, String email, String password, boolean gender) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.gender = gender;
         this.GameNumbers = GameNumbers;
     }
     public String getUsername() {
