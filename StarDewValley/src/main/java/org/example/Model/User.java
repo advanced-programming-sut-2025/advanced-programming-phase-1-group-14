@@ -11,7 +11,7 @@ public class User {
     private int gameNumbers = 0;
     private int highestMoney = 0;
 
-    private User(String username, String nickname, String email, String password, Gender gender) {
+    public User(String username, String nickname, String email, String password, Gender gender) {
         this.username = username;
         this.nickname = nickname;
         this.email = email;

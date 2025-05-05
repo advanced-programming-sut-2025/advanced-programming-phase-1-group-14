@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Controllers;
 
 import org.example.Model.App;
 import org.example.Model.Result;
@@ -8,7 +8,7 @@ import org.example.Model.enums.RegisterMenuCommands;
 
 public class RegisterMenuController {
 
-    public static Result register(String username, String password, String email, String name, Gender gender) {
+    public static Result register(String username, String password, String email, String nickname, Gender gender) {
         if(!RegisterMenuCommands.USERNAME.matches(username)) {
             return new Result(false, "username format is invalid!");
         }

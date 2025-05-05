@@ -1,6 +1,6 @@
 package org.example.View;
 
-import org.example.Controller.RegisterMenuController;
+import org.example.Controllers.RegisterMenuController;
 import org.example.Model.App;
 import org.example.Model.Result;
 import org.example.Model.enums.RegisterMenuCommands;
