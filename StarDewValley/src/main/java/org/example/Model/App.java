@@ -19,12 +19,12 @@ public class App {
     public static Menu getCurrentMenu() {
         return currentMenu;
     }
-    public static User getUserByUsername(String username) {
-        for(User user : users) {
-            if(user.getUserName().equals(username)) {
-                return user;
-            }
-        }
-        return null;
-    }
+//    public static User getUserByUsername(String username) {
+//        for(User user : users) {
+//            if(user.getUserName().equals(username)) {
+//                return user;
+//            }
+//        }
+//        return null;
+//    }
 }

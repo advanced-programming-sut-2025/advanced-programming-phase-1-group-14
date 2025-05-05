@@ -19,13 +19,6 @@ public class User {
         this.gender = gender;
     }
 
-    public User(String name, String username, String email, String password, Gender gender) {
-        this.username = username;
-        this.nickname = username;
-        this.email = email;
-        this.password = password;
-        this.gender = gender;
-    }
 
     public String getUserName() {
         return username;

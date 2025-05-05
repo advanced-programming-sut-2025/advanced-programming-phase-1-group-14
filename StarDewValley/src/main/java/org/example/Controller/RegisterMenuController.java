@@ -8,7 +8,7 @@ import org.example.Model.enums.RegisterMenuCommands;
 
 public class RegisterMenuController {
 
-    public static Result register(String username, String password, String email, String name) {
+    public static Result register(String username, String password, String email, String name, Gender gender) {
         if(!RegisterMenuCommands.USERNAME.matches(username)) {
             return new Result(false, "username format is invalid!");
         }
@@ -31,8 +31,6 @@ public class RegisterMenuController {
             return false;
         }
         String user = RegisterMenuCommands.EMAIL.getGroup(email, "user");
-        String domain = RegisterMenuCommands.EMAIL.getGroup(email, "domain");
-        String TLD = RegisterMenuCommands.EMAIL.getGroup(email, "TLD");
         if(!RegisterMenuCommands.USERNAME.matches(user)) {
             return false;
         }
