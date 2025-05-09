@@ -30,10 +30,11 @@ public class RegisterMenuController {
         if(!RegisterMenuCommands.EMAIL.matches(email)) {
             return false;
         }
-        String user = RegisterMenuCommands.EMAIL.getGroup(email, "user");
-        if(!RegisterMenuCommands.USERNAME.matches(user)) {
-            return false;
-        }
+//        String user = RegisterMenuCommands.EMAIL.getGroup(email, "email");
+//        if(!RegisterMenuCommands.USERNAME.matches(user)) {
+//            return false;
+//        }
+        //no need for this. regex can handle it.
         return true;
     }
 }
