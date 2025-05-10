@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Controllers;
 
 import org.example.Model.App;
 import org.example.Model.Result;
@@ -8,7 +8,7 @@ import org.example.Model.enums.RegisterMenuCommands;
 
 public class RegisterMenuController {
 
-    public static Result register(String username, String password, String email, String name, Gender gender) {
+    public static Result register(String username, String password, String email, String nickname, Gender gender) {
         if(!RegisterMenuCommands.USERNAME.matches(username)) {
             return new Result(false, "username format is invalid!");
         }
@@ -23,17 +23,18 @@ public class RegisterMenuController {
             return new Result(false, "email format is invalid!");
 
         }
-        App.addUser(new User(name, username, email, password, gender));
+        App.addUser(new User(username, nickname, email, password, gender));
         return new Result(true, "user registered successfully.you are now in login menu!");
     }
     private static boolean validateEmail(String email) {
         if(!RegisterMenuCommands.EMAIL.matches(email)) {
             return false;
         }
-        String user = RegisterMenuCommands.EMAIL.getGroup(email, "user");
-        if(!RegisterMenuCommands.USERNAME.matches(user)) {
-            return false;
-        }
+//        String user = RegisterMenuCommands.EMAIL.getGroup(email, "email");
+//        if(!RegisterMenuCommands.USERNAME.matches(user)) {
+//            return false;
+//        }
+        //no need for this. regex can handle it.
         return true;
     }
 }

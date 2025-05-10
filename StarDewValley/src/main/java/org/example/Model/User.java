@@ -17,10 +17,9 @@ public class User {
         this.email = email;
         this.password = password;
         this.gender = gender;
+        this.gameNumbers = gameNumbers;
     }
-
-
-    public String getUserName() {
+    public String getUsername() {
         return username;
     }
     public String getEmail() {
@@ -29,13 +28,10 @@ public class User {
     public String getPassword() {
         return password;
     }
-    public String getNickname() {
-        return nickname;
-    }
-    public Gender getGender() {
+    public String getNickname() { return nickname; }
+    public Gender GetGender() {
         return gender;
     }
-
     public int getGameNumbers() {
         return gameNumbers;
     }
@@ -55,14 +51,20 @@ public class User {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
+    public void setNickname(String nickname) { this.nickname = nickname; }
+
     public void setGameNumbers(int gameNumbers) {
         this.gameNumbers = gameNumbers;
     }
+
     public void setHighestMoney(int highestMoney) {
         this.highestMoney = highestMoney;
     }
-}
 
+    public boolean isPasswordCorrect(String password) {
+        return password.equals(this.password);
+    }
+
+
+
+}

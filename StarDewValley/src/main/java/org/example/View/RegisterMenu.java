@@ -1,6 +1,6 @@
 package org.example.View;
 
-import org.example.Controller.RegisterMenuController;
+import org.example.Controllers.RegisterMenuController;
 import org.example.Model.App;
 import org.example.Model.Result;
 import org.example.Model.enums.RegisterMenuCommands;
@@ -15,8 +15,7 @@ public class RegisterMenu implements AppMenu {
         if (RegisterMenuCommands.REGISTER.matches(input)) {
             handleRegister(input);
         } else if (RegisterMenuCommands.GO_TO_LOGIN_MENU.matches(input)) {
-            //Mahshad ino
-            //App.setCurrentMenu(Menu.LoginMenu);
+            App.setCurrentMenu(Menu.LoginMenu);
             System.out.println("you are now in login menu!");
         }
         else if (RegisterMenuCommands.EXIT.matches(input)) {
@@ -34,8 +33,8 @@ public class RegisterMenu implements AppMenu {
         String gender = RegisterMenuCommands.REGISTER.getGroup(input, "gender");
         Result result = RegisterMenuController.register(username, password, email, name, Gender.valueOf(gender));
         System.out.println(result.message());
-//        if(result.success()) {
-//            App.setCurrentMenu(Menu.LoginMenu);
-//        }
+        if(result.success()) {
+            App.setCurrentMenu(Menu.LoginMenu);
+        }
     }
 }
