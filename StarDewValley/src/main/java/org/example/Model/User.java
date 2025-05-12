@@ -8,8 +8,13 @@ public class User {
     private String email;
     private String password;
     private Gender gender;
-    private int gameNumbers = 0;
-    private int highestMoney = 0;
+    private int gameNumbers = 15000;
+    private int highestMoney = 15000;
+    private int energy = 200;
+    private int maxEnergy = 200;
+    private boolean isEnergyUnlimited = false;
+    private boolean hasFaintedToday = false;
+
 
     public User(String username, String nickname, String email, String password, Gender gender) {
         this.username = username;
@@ -17,7 +22,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.gender = gender;
-        this.gameNumbers = gameNumbers;
     }
     public String getUsername() {
         return username;
