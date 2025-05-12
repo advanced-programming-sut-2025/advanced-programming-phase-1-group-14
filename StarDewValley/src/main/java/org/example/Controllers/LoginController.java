@@ -24,4 +24,5 @@ public class LoginController {
         }
         return new Result(true, "password : " + user.getPassword());
     }
+
 }

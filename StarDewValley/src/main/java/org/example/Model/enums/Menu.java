@@ -9,6 +9,8 @@ public enum Menu {
     LoginMenu(new LoginView()),
     MainMenu(new MainMenu()),
     ProfileMenu(new ProfileMenu()),
+    GameMenu(new GameMenu()),
+    AvatarMenu(new AvatarMenu()),
     Exit(new ExitMenu());
     private final AppMenu menu;
     Menu(AppMenu menu){
