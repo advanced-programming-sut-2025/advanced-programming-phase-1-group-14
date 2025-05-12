@@ -16,6 +16,8 @@ public class RegisterMenuController {
 //        else if(App.getUserByUsername(username) != null) {
 //            return new Result(false, "this username is already taken!");
 //        }
+
+
         else if(!RegisterMenuCommands.PASSWORD.matches(password)) {
             return new Result(false, "password format is invalid!");
         }

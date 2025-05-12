@@ -17,6 +17,7 @@ public enum RegisterMenuCommands implements Command {
         this.pattern = pattern;
     }
 
+
     @Override
     public String getPattern() {
         return this.pattern;

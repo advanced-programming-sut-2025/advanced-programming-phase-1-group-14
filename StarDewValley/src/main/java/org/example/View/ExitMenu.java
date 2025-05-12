@@ -8,3 +8,4 @@ public class ExitMenu implements AppMenu{
         throw new RuntimeException("Goodbye!");
     }
 }
+

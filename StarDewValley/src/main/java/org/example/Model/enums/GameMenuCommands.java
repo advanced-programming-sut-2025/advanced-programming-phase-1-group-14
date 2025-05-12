@@ -13,6 +13,8 @@ public enum GameMenuCommands implements Command{
     ;
 
 
+
+
     GameMenuCommands(Pattern pattern) {
         this.pattern = pattern;
     }

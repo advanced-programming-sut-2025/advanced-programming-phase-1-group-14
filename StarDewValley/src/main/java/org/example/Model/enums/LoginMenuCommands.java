@@ -8,6 +8,7 @@ public enum LoginMenuCommands implements Command {
     ;
 
 
+
     private final String pattern;
 
     LoginMenuCommands(String pattern) {

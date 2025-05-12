@@ -28,6 +28,7 @@ public class Weather {
         };
     }
 
+
     public WeatherType getTodayWeather() {
         return todayWeather;
     }

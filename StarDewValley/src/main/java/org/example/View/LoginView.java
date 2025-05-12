@@ -24,6 +24,7 @@ public class LoginView implements AppMenu {
             invalidCommand();
         }
     }
+
     private void handleLogin(String input) {
         String username = LoginMenuCommands.LOGIN.getGroup(input, "username");
         String password = LoginMenuCommands.LOGIN.getGroup(input, "password");

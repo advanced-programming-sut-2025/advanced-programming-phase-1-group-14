@@ -25,6 +25,6 @@ public class MainMenu implements AppMenu{
         } else {
             invalidCommand();
         }
-
     }
 }
+

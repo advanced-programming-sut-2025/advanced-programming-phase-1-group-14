@@ -2,6 +2,7 @@ package org.example.Model;
 
 import org.example.Model.enums.Gender;
 
+
 public class User {
     private String username;
     private String nickname;

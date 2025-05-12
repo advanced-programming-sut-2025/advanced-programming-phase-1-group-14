@@ -28,3 +28,4 @@ public enum WeatherType {
         return hasLightning;
     }
 }
+

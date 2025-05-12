@@ -14,3 +14,4 @@ public class AppView {
         } while (App.getCurrentMenu() != Menu.Exit);
     }
 }
+

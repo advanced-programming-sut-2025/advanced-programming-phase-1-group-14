@@ -31,3 +31,4 @@ public class WeatherView {
         return Character.toUpperCase(w.charAt(0)) + w.substring(1); // e.g. "Sunny"
     }
 }
+

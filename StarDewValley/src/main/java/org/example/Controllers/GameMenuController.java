@@ -19,4 +19,9 @@ public class GameMenuController {
         view.show(player + " selected map #" + mapNum);
         model.advanceTurn();
     }
+    private void handleNewGame() {
+
+
+
+    }
 }

@@ -25,6 +25,7 @@ public class RegisterMenu implements AppMenu {
             invalidCommand();
         }
     }
+
     private void handleRegister(String input) {
         String username = RegisterMenuCommands.REGISTER.getGroup(input, "username");
         String password = RegisterMenuCommands.REGISTER.getGroup(input, "password");
