@@ -8,7 +8,7 @@ public class App {
     private static final ArrayList<User> users = new ArrayList<>();
     private static User loggedInUser;
     private static Menu currentMenu = Menu.RegisterMenu;
-    public static void setCurrentMenu(Menu currentMenu) {
+    public static void setCurrentMenu(Menu currentMenu) { //اینجا به مین منو نیاز داریم!!
         App.currentMenu = currentMenu;
     }
     public static ArrayList<User> getUsers() {
@@ -38,5 +38,14 @@ public class App {
 
     public static TimeAndDate getTimeAndDate() {
         return timeAndDate;
+    }
+    private static Game currentGame;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void startNewGame() {
+        currentGame = new Game();
     }
 }

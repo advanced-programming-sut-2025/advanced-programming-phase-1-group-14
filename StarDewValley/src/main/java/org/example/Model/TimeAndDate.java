@@ -1,9 +1,9 @@
 package org.example.Model;
-
+import org.example.Model.enums.Season;
 public class TimeAndDate {
     private static TimeAndDate instance;
     private int hour = 9, day = 1,seasonIndex = 0, year = 1;
-    private static final String[] seasons = {"Spring", "Summer", "Autumn", "Winter"};
+    private Season currentSeason = Season.SPRING;
     private static final String[] weekdays = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
     private TimeAndDate() {}
     public static TimeAndDate getInstance() {
@@ -39,15 +39,18 @@ public class TimeAndDate {
         return String.format("%02d:00", hour);
     }
     public String getDate(){
-        return String.format("%s %d, Year %d", seasons[seasonIndex], day, year);
+        return String.format("%s %d, Year %d", currentSeason, day, year);
     }
 
     public String getWeekdays() {
-        int totalDays = (seasonIndex * 28) + (day - 1);
+        int totalDays = (currentSeason.ordinal() * 28) + (day - 1);
         return weekdays[totalDays % 7];
     }
     public String getDateTime() {
         return getDate() + " - " + getTime();
+    }
+    public Season getSeason() {
+        return currentSeason;
     }
 }
 
