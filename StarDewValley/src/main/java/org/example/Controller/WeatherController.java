@@ -6,7 +6,7 @@ public class WeatherController {
     private final Weather weather;
     private final WeatherView weatherview;
 
-    public WeatherController(Weather weather, WeatherView view) {
+    public WeatherController(Weather weather, WeatherView weatherview) {
         this.weather = weather;
         this.weatherview  = weatherview;
     }

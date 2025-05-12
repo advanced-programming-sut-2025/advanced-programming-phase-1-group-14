@@ -10,6 +10,9 @@ public class AppView {
         Scanner scanner = new Scanner(System.in);
         do {
             App.getCurrentMenu().checkCommand(scanner);
+            if (scanner.nextLine().equalsIgnoreCase("printMap")) {
+                App.printGameMap();
+            }
         } while (App.getCurrentMenu() != Menu.Exit);
     }
 }

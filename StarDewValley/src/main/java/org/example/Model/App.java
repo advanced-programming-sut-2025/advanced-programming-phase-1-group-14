@@ -48,4 +48,11 @@ public class App {
     public static void startNewGame() {
         currentGame = new Game();
     }
+    public static void printGameMap() {
+        if (currentGame != null) {
+            currentGame.getGameMap().printMap();
+        } else {
+            System.out.println("Game has not started yet.");
+        }
+    }
 }
