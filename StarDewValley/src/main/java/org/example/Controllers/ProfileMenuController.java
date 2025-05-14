@@ -10,7 +10,9 @@ public class ProfileMenuController {
             return new Result(false, "invalid username!");
         } else if (username.equals(App.getLoggedInUser().getUsername())) {
             return new Result(false, "please choose a NEW username!");
-        } else return new Result(true, "username successfully changed!");
+        } else {
+            return new Result(true, "username successfully changed!");
+        }
     }
     public static Result changePassword(String password, String confirm) {
         if (!RegisterMenuCommands.PASSWORD.matches(password)) {

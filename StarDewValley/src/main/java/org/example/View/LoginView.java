@@ -10,8 +10,9 @@ import java.util.Scanner;
 
 public class LoginView implements AppMenu {
     @Override
-    public void check(Scanner scanner) {
-        String input = scanner.nextLine().trim();
+    public void check(String input) {
+        System.out.println("debug: login input");
+        //String input = scanner.nextLine().trim();
         if (LoginMenuCommands.LOGIN.matches(input)) {
             handleLogin(input);
         } else if (LoginMenuCommands.FORGET_PASSWORD.matches(input)) {
@@ -20,7 +21,9 @@ public class LoginView implements AppMenu {
             App.setCurrentMenu(Menu.Exit);
         }/* else if (LoginMenuCommands.ANSWER_SECURITY_QUESTION.matches(input)) {
             App.setCurrentMenu(Menu.Exit);
-        }*/ else {
+        }*/ else if (LoginMenuCommands.SHOWCURRENTMENU.matches(input)) {
+            System.out.println("Login Menu");
+        } else {
             invalidCommand();
         }
     }

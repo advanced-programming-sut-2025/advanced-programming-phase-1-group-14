@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class MainMenu implements AppMenu{
     @Override
-    public void check(Scanner scanner) {
-        String input = scanner.nextLine().trim();
+    public void check(String input) {
+        //String input = scanner.nextLine().trim();
         if (MainMenuCommands.ENTER_GAME_MENU.matches(input)) {
             App.setCurrentMenu(Menu.GameMenu);
             System.out.println("you are now in game menu.");
@@ -22,6 +22,9 @@ public class MainMenu implements AppMenu{
         } else if (MainMenuCommands.LOGOUT.matches(input)) {
             App.setCurrentMenu(Menu.LoginMenu);
             App.setLoggedInUser(null);
+            System.out.println("User successfully logged out. You are now on Login menu.");
+        } else if (MainMenuCommands.SHOWCURRENTMENU.matches(input)) {
+            System.out.println("Main Menu");
         } else {
             invalidCommand();
         }

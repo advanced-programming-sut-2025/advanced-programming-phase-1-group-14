@@ -1,6 +1,8 @@
 package org.example.View;
 
 import org.example.Controllers.ProfileMenuController;
+import org.example.Model.App;
+import org.example.Model.enums.Menu;
 import org.example.Model.enums.ProfileMenuCommands;
 
 import java.util.Scanner;
@@ -8,18 +10,23 @@ import java.util.Scanner;
 public class ProfileMenu implements AppMenu{
     ProfileMenuController controller = new ProfileMenuController();
     @Override
-    public void check(Scanner scanner) {
-        String input = scanner.nextLine().trim();
+    public void check(String input) {
+        //String input = scanner.nextLine().trim();
         if (ProfileMenuCommands.CHANGEUSERNAME.matches(input)) {
-
+            handleChangeUsername(input);
         } else if (ProfileMenuCommands.CHANGENICKNAME.matches(input)) {
-
+            handleChangeNickname(input);
         } else if (ProfileMenuCommands.CHANGEEMAIL.matches(input)) {
-
+            handleChangeEmail(input);
         } else if (ProfileMenuCommands.CHANGEPASSWORD.matches(input)) {
-
+            handleChangePassword(input);
         } else if (ProfileMenuCommands.USERINFO.matches(input)) {
             ProfileMenuController.showInfo();
+        } else if (ProfileMenuCommands.SHOWCURRENTMENU.matches(input)) {
+            System.out.println("Profile Menu");
+        } else if (ProfileMenuCommands.EXIT.matches(input)) {
+            App.setCurrentMenu(Menu.MainMenu);
+            System.out.println("You are now in main menu.");
         } else {
             invalidCommand();
         }

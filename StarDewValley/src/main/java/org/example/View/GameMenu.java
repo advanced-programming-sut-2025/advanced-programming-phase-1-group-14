@@ -10,9 +10,9 @@ import java.util.Scanner;
 
 public class GameMenu implements AppMenu{
     @Override
-    public void check(Scanner scanner) {
+    public void check(String input) {
         GameMenuController controller = new GameMenuController();
-        String input = scanner.nextLine().trim();
+        //String input = scanner.nextLine().trim();
         if (GameMenuCommands.CHOOSEMAP.matches(input)) {
 
         } else if (GameMenuCommands.NEWGAME.matches(input)) {
@@ -25,8 +25,12 @@ public class GameMenu implements AppMenu{
 
         } else if (GameMenuCommands.EXITGAME.matches(input)) {
 
-        }
-        else {
+        } else if (GameMenuCommands.EXIT.matches(input)) {
+            App.setCurrentMenu(Menu.MainMenu);
+            System.out.println("You are now in main menu.");
+        } else if (GameMenuCommands.SHOWCURRENTMENU.matches(input)) {
+            System.out.println("Game Menu");
+        } else {
             invalidCommand();
         }
     }

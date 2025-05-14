@@ -9,7 +9,10 @@ public enum GameMenuCommands implements Command{
     LOADGAME("load\\s+game"),
     EXITGAME("exit\\s+game"),
     DELETEGAME("delete\\s+game"),
-    NEXTTURN("next\\s+turn")
+    NEXTTURN("next\\s+turn"),
+    SHOWCURRENTMENU("^\\s*show\\s+current\\s+menu\\s*$"),
+    EXIT("menu\\s+exit")
+
     ;
 
 

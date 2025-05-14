@@ -18,7 +18,7 @@ public enum Menu {
     };
 
 
-    public void checkCommand(Scanner scanner){
-        this.menu.check(scanner);
+    public void checkCommand(String input){
+        this.menu.check(input);
     }
 }

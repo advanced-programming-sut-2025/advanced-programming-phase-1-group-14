@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public interface AppMenu {
-    public void check(Scanner scanner);
+    public void check(String input);
     public default void invalidCommand() {
         System.out.println("invalid command!");
     }

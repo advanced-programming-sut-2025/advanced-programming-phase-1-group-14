@@ -1,6 +1,7 @@
 package org.example.Model;
 
 import org.example.Model.enums.Gender;
+import org.example.Model.enums.SecurityQuestion;
 
 
 public class User {
@@ -8,16 +9,21 @@ public class User {
     private String nickname;
     private String email;
     private String password;
-    private Gender gender;
+    private final Gender gender;
     private int gameNumbers = 0;
     private int highestMoney = 0;
+    private SecurityQuestion securityQuestion;
+    private String securityAnswer;
 
-    public User(String username, String nickname, String email, String password, Gender gender) {
+    public User(String username, String nickname, String email, String password, Gender gender,
+                SecurityQuestion securityQuestion, String securityAnswer) {
         this.username = username;
         this.nickname = nickname;
         this.email = email;
         this.password = password;
         this.gender = gender;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
         this.gameNumbers = gameNumbers;
     }
     public String getUsername() {
@@ -49,9 +55,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
     public void setNickname(String nickname) { this.nickname = nickname; }
 
     public void setGameNumbers(int gameNumbers) {
@@ -65,6 +68,10 @@ public class User {
     public boolean isPasswordCorrect(String password) {
         return password.equals(this.password);
     }
+    public SecurityQuestion getSecurityQuestion() { return securityQuestion; }
+    public String getSecurityAnswer() { return securityAnswer; }
+    public void setSecurityQuestion(SecurityQuestion q) { this.securityQuestion = q; }
+    public void setSecurityAnswer(String a) { this.securityAnswer = a; }
 
 
 
