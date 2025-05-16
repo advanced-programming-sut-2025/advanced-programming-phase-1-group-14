@@ -11,31 +11,41 @@ public class ProfileMenuController {
         } else if (username.equals(App.getLoggedInUser().getUsername())) {
             return new Result(false, "please choose a NEW username!");
         } else {
+            App.getLoggedInUser().setUsername(username);
             return new Result(true, "username successfully changed!");
         }
     }
     public static Result changePassword(String password, String confirm) {
         if (!RegisterMenuCommands.PASSWORD.matches(password)) {
             return new Result(false, "invalid password!");
-        } else if (password.equals(App.getLoggedInUser().getPassword())) {
+        } else if (!confirm.equals(App.getLoggedInUser().getPassword())) {
+            return new Result(false, "old password is wrong!");
+        } else if (password.equals(confirm)) {
             return new Result(false, "please choose a NEW password!");
-        } else if (!password.equals(confirm)) {
-            return new Result(false, "password confirm is wrong!");
-        } else return new Result(true, "password successfully changed!");
+        } else {
+            App.getLoggedInUser().setPassword(password);
+            return new Result(true, "password successfully changed!");
+        }
     }
     public static Result changeNickname(String nickname) {
         if (!RegisterMenuCommands.NICKNAME.matches(nickname)) {
             return new Result(false, "invalid nickname!");
         } else if (nickname.equals(App.getLoggedInUser().getNickname())) {
             return new Result(false, "please choose a NEW nickname!");
-        } else return new Result(true, "nickname successfully changed!");
+        } else {
+            App.getLoggedInUser().setNickname(nickname);
+            return new Result(true, "nickname successfully changed!");
+        }
     }
     public static Result changeEmail(String email) {
         if (!RegisterMenuCommands.EMAIL.matches(email)) {
             return new Result(false, "invalid email!");
         } else if (email.equals(App.getLoggedInUser().getEmail())) {
             return new Result(false, "please choose a NEW email!");
-        } else return new Result(true, "email successfully changed!");
+        } else {
+            App.getLoggedInUser().setEmail(email);
+            return new Result(true, "email successfully changed!");
+        }
     }
     public static void showInfo() {
         System.out.println("username: " + App.getLoggedInUser().getUsername());

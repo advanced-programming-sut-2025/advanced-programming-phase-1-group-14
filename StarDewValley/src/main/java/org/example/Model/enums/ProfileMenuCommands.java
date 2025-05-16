@@ -18,6 +18,6 @@ public enum ProfileMenuCommands implements Command{
 
     @Override
     public String getPattern() {
-        return "";
+        return this.pattern;
     }
 }

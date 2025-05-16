@@ -24,7 +24,7 @@ public enum GameMenuCommands implements Command{
 
     @Override
     public String getPattern() {
-        return "";
+        return this.pattern.toString();
     }
     private final Pattern pattern;
     GameMenuCommands(String regex) { pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE); }

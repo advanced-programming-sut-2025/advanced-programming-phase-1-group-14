@@ -10,6 +10,7 @@ public class MainMenu implements AppMenu{
     @Override
     public void check(String input) {
         //String input = scanner.nextLine().trim();
+        //System.out.println("DEBUG: input received!");
         if (MainMenuCommands.ENTER_GAME_MENU.matches(input)) {
             App.setCurrentMenu(Menu.GameMenu);
             System.out.println("you are now in game menu.");
@@ -22,7 +23,7 @@ public class MainMenu implements AppMenu{
         } else if (MainMenuCommands.LOGOUT.matches(input)) {
             App.setCurrentMenu(Menu.LoginMenu);
             App.setLoggedInUser(null);
-            System.out.println("User successfully logged out. You are now on Login menu.");
+            System.out.println("User successfully logged out. You are now in Login menu.");
         } else if (MainMenuCommands.SHOWCURRENTMENU.matches(input)) {
             System.out.println("Main Menu");
         } else {

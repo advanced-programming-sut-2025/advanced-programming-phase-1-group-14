@@ -2,6 +2,7 @@ package org.example.View;
 
 import org.example.Controllers.ProfileMenuController;
 import org.example.Model.App;
+import org.example.Model.Result;
 import org.example.Model.enums.Menu;
 import org.example.Model.enums.ProfileMenuCommands;
 
@@ -33,19 +34,23 @@ public class ProfileMenu implements AppMenu{
     }
     public void handleChangeUsername(String input) {
         String newUsername = ProfileMenuCommands.CHANGEUSERNAME.getGroup(input, "username");
-        ProfileMenuController.changeUsername(newUsername);
+        Result result = ProfileMenuController.changeUsername(newUsername);
+        System.out.println(result.message());
     }
     public void handleChangePassword(String input) {
         String newPassword = ProfileMenuCommands.CHANGEPASSWORD.getGroup(input, "password");
         String confirm = ProfileMenuCommands.CHANGEPASSWORD.getGroup(input, "passwordConfirm");
-        ProfileMenuController.changePassword(newPassword, confirm);
+        Result result = ProfileMenuController.changePassword(newPassword, confirm);
+        System.out.println(result.message());
     }
     public void handleChangeNickname(String input) {
         String newNickname = ProfileMenuCommands.CHANGENICKNAME.getGroup(input, "nickname");
-        ProfileMenuController.changeNickname(newNickname);
+        Result result = ProfileMenuController.changeNickname(newNickname);
+        System.out.println(result.message());
     }
     public void handleChangeEmail(String input) {
         String newEmail = ProfileMenuCommands.CHANGEEMAIL.getGroup(input, "email");
-        ProfileMenuController.changeEmail(newEmail);
+        Result result = ProfileMenuController.changeEmail(newEmail);
+        System.out.println(result.message());
     }
 }

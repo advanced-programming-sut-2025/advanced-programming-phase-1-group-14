@@ -2,9 +2,9 @@ package org.example.Model.enums;
 
 public enum MainMenuCommands implements Command{
     ENTER_PROFILE_MENU("^\\s*menu\\s+enter\\s+profile\\s*$"),
-    ENTER_GAME_MENU("menu\\s+enter\\s+game"),
-    ENTER_AVATAR_MENU("menu\\s+enter\\s+avatar"),
-    LOGOUT("user\\s+logout"), //mesle exit baraye baghie menu ha
+    ENTER_GAME_MENU("^\\s*menu\\s+enter\\s+game\\s*$"),
+    ENTER_AVATAR_MENU("^\\s*menu\\s+enter\\s+avatar\\s*$"),
+    LOGOUT("^\\s*user\\s+logout\\s*$"), //mesle exit baraye baghie menu ha
     SHOWCURRENTMENU("^\\s*show\\s+current\\s+menu\\s*$")
 
     ;
@@ -17,6 +17,6 @@ public enum MainMenuCommands implements Command{
     }
     @Override
     public String getPattern() {
-        return "";
+        return this.pattern;
     }
 }

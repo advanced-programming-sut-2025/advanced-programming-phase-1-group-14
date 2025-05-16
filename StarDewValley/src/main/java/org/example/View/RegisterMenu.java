@@ -12,21 +12,21 @@ public class RegisterMenu implements AppMenu {
     @Override
     public void check(String input) {
         //String input = scanner.nextLine().trim();
-        System.out.println("DEBUG: input received!");
+        //System.out.println("DEBUG: input received!");
         if (RegisterMenuCommands.REGISTER.matches(input)) {
-            System.out.println("DEBUG: matched REGISTER!");
+            //System.out.println("DEBUG: matched REGISTER!");
             handleRegister(input);
         } else if (RegisterMenuCommands.GO_TO_LOGIN_MENU.matches(input)) {
             App.setCurrentMenu(Menu.LoginMenu);
             System.out.println("you are now in login menu!");
         }
         else if (RegisterMenuCommands.EXIT.matches(input)) {
-            System.out.println("DEBUG: matched exit!");
+            //System.out.println("DEBUG: matched exit!");
             App.setCurrentMenu(Menu.Exit);
         } else if (RegisterMenuCommands.SHOWCURRENTMENU.matches(input)) {
             System.out.println("Register Menu");
         } else if (RegisterMenuCommands.PICK_QUESTION.matches(input)) {
-            System.out.println("DEBUG: matched pick!");
+            //System.out.println("DEBUG: matched pick!");
             pickQuestion(input, registerCommand);
         } else {
             invalidCommand();
