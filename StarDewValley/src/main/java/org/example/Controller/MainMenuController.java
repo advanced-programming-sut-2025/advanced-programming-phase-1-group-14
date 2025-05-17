@@ -1,4 +1,12 @@
-package org.example.Controller;
 
-public class MainMenuController {
+package org.example.Controllers;
+
+public class MainMenuController extends BaseMenuController {
+
+    @Override
+    protected void handleSpecific(String input) {
+
+
+
+    }
 }

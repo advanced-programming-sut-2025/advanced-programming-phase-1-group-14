@@ -34,6 +34,14 @@ public class App {
         }
         return null;
     }
+    public static ArrayList<User> getFirstNUsers(int n) {
+        ArrayList<User> copy = new ArrayList<>();
+        for (int i = 0; i < Math.min(n, users.size()); i++) {
+            copy.add(users.get(i));
+        }
+        return copy;
+    }
+
     private static final TimeAndDate timeAndDate = TimeAndDate.getInstance();
 
     public static TimeAndDate getTimeAndDate() {
@@ -55,4 +63,7 @@ public class App {
             System.out.println("Game has not started yet.");
         }
     }
+
+
+
 }

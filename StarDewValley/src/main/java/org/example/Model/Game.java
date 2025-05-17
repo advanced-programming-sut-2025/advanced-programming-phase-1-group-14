@@ -6,7 +6,7 @@ public class Game {
     private final GameMap gameMap;
 
     public Game() {
-        this.gameMap = new GameMap();
+        this.gameMap = new GameMap(App.getFirstNUsers(4));
     }
     public Weather getWeather() {
         return weather;

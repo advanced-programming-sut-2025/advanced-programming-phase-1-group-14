@@ -2,12 +2,16 @@ package org.example.Model;
 
 import org.example.Model.enums.TileType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameMap {
     public static final int WIDTH = 150;
     public static final int HEIGHT = 150;
     private final Tile[][] tiles = new Tile[HEIGHT][WIDTH];
-
-    public GameMap() {
+    private final List<User> farmOwners;
+    public GameMap(ArrayList<User> firstNUsers) {
+        this.farmOwners = farmOwners;
         initializeEmptyMap();
         placeFarms();
         placeVillage();
@@ -43,30 +47,29 @@ public class GameMap {
         return tiles[y][x];
     }
 
-    private void createFarmForMap(int startX, int startY) {
+    private void createFarmForMap(User owner, int startX, int startY) {
         int width = 39;
         int height = 39;
 
-        User dummyUser = new User("demo", "Demo", "demo@mail.com", "pass", null);
-        Farm farm = new Farm(dummyUser, startX, startY);
+        Farm farm = new Farm(owner, startX, startY);
         farm.setWidth(width);
         farm.setHeight(height);
 
-        // اضافه کردن سازه‌ها در مکان‌های ثابت
         farm.setGreenHouse(new GreenHouse(startX + 1, startY + 1, 6, 5));
         farm.setHouse(new House(startX + 1, startY + 30, 4, 4));
         farm.setQuarry(new Quarry(startX + 30, startY + 10, 6, 4));
 
-        // در آینده → farm.setLake(...)
-
-        // روی نقشه‌ی اصلی اثر بذار
         farm.setTileTypes(tiles);
     }
     private void placeFarms() {
-        createFarmForMap(0, 0);             // بالا چپ
-        createFarmForMap(110, 0);           // بالا راست
-        createFarmForMap(0, 110);           // پایین چپ
-        createFarmForMap(110, 110);         // پایین راست
+        if (farmOwners.size() > 0)
+            createFarmForMap(farmOwners.get(0), 0, 0); // بالا چپ
+        if (farmOwners.size() > 1)
+            createFarmForMap(farmOwners.get(1), 110, 0); // بالا راست
+        if (farmOwners.size() > 2)
+            createFarmForMap(farmOwners.get(2), 0, 110); // پایین چپ
+        if (farmOwners.size() > 3)
+            createFarmForMap(farmOwners.get(3), 110, 110); // پایین راست        // پایین راست
     }
     public void printMap() {
         for (int y = 0; y < HEIGHT; y++) {

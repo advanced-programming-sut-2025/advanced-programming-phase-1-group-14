@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import org.example.Model.enums.Gender;
-
+import org.example.Model.Skill;
 public class User {
     private String username;
     private String nickname;
@@ -26,14 +26,15 @@ public class User {
         this.email = email;
         this.password = password;
         this.gender = gender;
-    }
-    this.skillsLevel = new HashMap<>();
+        this.skillsLevel = new HashMap<>();
         for (Skill skill : Skill.values()) {
-        skillsLevel.put(skill, 0);
-    }
+            skillsLevel.put(skill, 0);
+        }
+
         this.skillExperience = new HashMap<>();
         for (Skill skill : Skill.values()) {
-        skillExperience.put(skill, 0);
+            skillExperience.put(skill, 0);
+        }
     }
     public String getUsername() {
         return username;

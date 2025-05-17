@@ -10,12 +10,19 @@ public enum RegisterMenuCommands implements Command {
     NICKNAME("[a-zA-Z0-9\\-]+"),
     GENDER("(MALE|FEMALE)"),
     GO_TO_LOGIN_MENU("go\\s+to\\s+login\\s+menu"),
-    EXIT("Menu exit");
+    EXIT("^\\s*menu\\s+exit\\s*$"),
+    SHOWCURRENTMENU("^\\s*show\\s+current\\s+menu\\s*$"),
+    PICK_QUESTION(
+            "^\\s*pick\\s+question\\s+-q\\s+(?<qnum>\\d+)\\s+-a\\s+(?<answer>\\S+)\\s+-c\\s+(?<answerConfirm>\\S+$)"
+    ),
+
+    ;
     private final String pattern;
 
     RegisterMenuCommands(String pattern) {
         this.pattern = pattern;
     }
+
 
     @Override
     public String getPattern() {
