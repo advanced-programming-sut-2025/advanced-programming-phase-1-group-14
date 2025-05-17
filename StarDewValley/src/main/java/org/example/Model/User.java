@@ -73,7 +73,5 @@ public class User {
     public void setSecurityQuestion(SecurityQuestion q) { this.securityQuestion = q; }
     public void setSecurityAnswer(String a) { this.securityAnswer = a; }
 
-
-
 }
 
