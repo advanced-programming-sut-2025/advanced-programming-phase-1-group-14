@@ -9,9 +9,9 @@ public class GameMap {
     public static final int WIDTH = 150;
     public static final int HEIGHT = 150;
     private final Tile[][] tiles = new Tile[HEIGHT][WIDTH];
-    private final List<User> farmOwners;
+    private List<User> farmOwners = null;
     public GameMap(ArrayList<User> firstNUsers) {
-        this.farmOwners = farmOwners;
+        this.farmOwners = null;
         initializeEmptyMap();
         placeFarms();
         placeVillage();

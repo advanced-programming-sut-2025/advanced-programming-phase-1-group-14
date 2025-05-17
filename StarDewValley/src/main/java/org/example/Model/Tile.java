@@ -48,8 +48,5 @@ public class Tile {
         this.y = y;
     }
     public void changeTile(){}
-    public Tile(TileType type) {
-        this.type = type;
-    }
 
 }

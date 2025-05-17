@@ -23,7 +23,7 @@ public class User {
     private Map<Skill, Integer> skillsLevel;
     private Map<Skill, Integer> skillExperience;
 
-    private User(String username,String nickname, String email, String password, Gender gender,SecurityQuestion securityQuestion, String securityAnswer) {
+    public User(String username,String nickname, String email, String password, Gender gender,SecurityQuestion securityQuestion, String securityAnswer) {
         this.username = username;
         this.nickname = nickname;
         this.email = email;
@@ -56,12 +56,14 @@ public class User {
         return gender;
     }
     public int getGameNumbers() {
-        return gameNumbers;
+        return GameNumbers;
     }
     public int getHighestMoney() {
         return highestMoney;
     }
-
+    public int getEnergy() {
+            return energy;
+    }
     public void setUsername(String username) {
         this.username = username;
     }
@@ -74,7 +76,7 @@ public class User {
     public void setNickname(String nickname) { this.nickname = nickname; }
 
     public void setGameNumbers(int gameNumbers) {
-        this.gameNumbers = gameNumbers;
+        this.GameNumbers = gameNumbers;
     }
 
     public void setHighestMoney(int highestMoney) {
