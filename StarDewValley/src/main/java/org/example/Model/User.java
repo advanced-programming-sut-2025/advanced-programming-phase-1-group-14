@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.example.Model.enums.SecurityQuestion;
 import org.example.Model.enums.Gender;
 import org.example.Model.Skill;
 public class User {
@@ -10,9 +11,11 @@ public class User {
     private String nickname;
     private String email;
     private String password;
-    private Gender gender;
-    private int gameNumbers = 15000;
+    private final Gender gender;
+    private int GameNumbers = 0;
     private int highestMoney = 15000;
+    private SecurityQuestion securityQuestion;
+    private String securityAnswer;
     private int energy = 200;
     private int maxEnergy = 200;
     private boolean isEnergyUnlimited = false;
@@ -20,12 +23,15 @@ public class User {
     private Map<Skill, Integer> skillsLevel;
     private Map<Skill, Integer> skillExperience;
 
-    public User(String username, String nickname, String email, String password, Gender gender) {
+    private User(String username,String nickname, String email, String password, Gender gender,SecurityQuestion securityQuestion, String securityAnswer) {
         this.username = username;
         this.nickname = nickname;
         this.email = email;
         this.password = password;
         this.gender = gender;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
+        this.GameNumbers = GameNumbers;
         this.skillsLevel = new HashMap<>();
         for (Skill skill : Skill.values()) {
             skillsLevel.put(skill, 0);
@@ -65,13 +71,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
     public void setNickname(String nickname) { this.nickname = nickname; }
+
     public void setGameNumbers(int gameNumbers) {
         this.gameNumbers = gameNumbers;
     }
+
     public void setHighestMoney(int highestMoney) {
         this.highestMoney = highestMoney;
     }
@@ -79,6 +84,12 @@ public class User {
     public boolean isPasswordCorrect(String password) {
         return password.equals(this.password);
     }
+    public SecurityQuestion getSecurityQuestion() { return securityQuestion; }
+    public String getSecurityAnswer() { return securityAnswer; }
+    public void setSecurityQuestion(SecurityQuestion q) { this.securityQuestion = q; }
+    public void setSecurityAnswer(String a) { this.securityAnswer = a; }
+
+
     public int energy() {
         return energy;
     }
@@ -181,3 +192,4 @@ public class User {
         this.energy = Math.min(this.energy + amount, maxEnergy);
     }
 }
+

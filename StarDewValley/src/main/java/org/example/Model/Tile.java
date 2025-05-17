@@ -9,6 +9,9 @@ public class Tile {
     private int x;
     private int y;
 
+    public Tile(TileType type) {
+        this.type = type;
+    }
 
     public TileType getType() {
         return type;

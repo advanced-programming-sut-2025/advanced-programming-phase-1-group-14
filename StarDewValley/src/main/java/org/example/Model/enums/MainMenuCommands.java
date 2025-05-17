@@ -1,23 +1,20 @@
 package org.example.Model.enums;
 
-public enum LoginMenuCommands implements Command {
-    LOGIN("login\\s+-u\\s+(?<username>\\S+)\\s+-p\\s+(?<password>\\S+)(?:\\s+--?stay-logged-in)?"),
-    FORGET_PASSWORD("^\\s*forget\\s+password\\s+-u\\s+(?<username>\\S+)\\s*$"),
-    ANSWER_SECURITY_QUESTION("answer\\s+-a\\s+(?<answer>\\S+)\\s*"),
-    EXIT("menu\\s+exit"),
-    SHOWCURRENTMENU("^\\s*show\\s+current\\s+menu\\s*$"),
-    RESET_PASSWORD("reset\\s+password\\s+-p\\s+(?<password>\\S+)\\s+-c\\s+(?<confirm>\\S+)\\s*"),
+public enum MainMenuCommands implements Command{
+    ENTER_PROFILE_MENU("^\\s*menu\\s+enter\\s+profile\\s*$"),
+    ENTER_GAME_MENU("^\\s*menu\\s+enter\\s+game\\s*$"),
+    ENTER_AVATAR_MENU("^\\s*menu\\s+enter\\s+avatar\\s*$"),
+    LOGOUT("^\\s*user\\s+logout\\s*$"), //mesle exit baraye baghie menu ha
+    SHOWCURRENTMENU("^\\s*show\\s+current\\s+menu\\s*$")
 
     ;
 
-
-
     private final String pattern;
 
-    LoginMenuCommands(String pattern) {
+
+    MainMenuCommands(String pattern) {
         this.pattern = pattern;
     }
-
     @Override
     public String getPattern() {
         return this.pattern;

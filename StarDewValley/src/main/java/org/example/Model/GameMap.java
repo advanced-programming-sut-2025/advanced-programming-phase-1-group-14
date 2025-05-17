@@ -80,15 +80,6 @@ public class GameMap {
         }
     }
 
-//    private void placeRandomObjectsInFarm(int xStart, int yStart, int xEnd, int yEnd) {
-//        TileType[] decorations = {TileType.CABIN, TileType.LAKE, TileType.GREENHOUSE, TileType.QUARRY};
-//        for (TileType type : decorations) {
-//            // قرار دادن یکی از هر نوع به صورت تصادفی
-//            int x = (int) (Math.random() * (xEnd - xStart)) + xStart;
-//            int y = (int) (Math.random() * (yEnd - yStart)) + yStart;
-//            tiles[y][x].setType(type);
-//        }
-//    }
 
 
 }

@@ -2,9 +2,10 @@ package org.example.View;
 
 import java.util.Scanner;
 
-public class ExitMenu implements AppMenu{
+public class AvatarMenu implements AppMenu{
     @Override
     public void check(String input) {
-        throw new RuntimeException("Goodbye!");
+
+
     }
 }

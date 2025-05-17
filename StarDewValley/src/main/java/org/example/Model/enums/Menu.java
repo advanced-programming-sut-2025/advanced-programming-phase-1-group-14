@@ -1,4 +1,3 @@
-
 package org.example.Model.enums;
 
 import org.example.View.*;
